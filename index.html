@@ -18,30 +18,32 @@
 </head>
 
 <body>
-    <div class="container my-4">
-        <div id="photoBooth" class="text-center bg-white p-3 rounded shadow-sm mx-auto">
+    <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100 p-3 p-md-4">
+        <div id="photoBooth" class="text-center bg-white rounded shadow-sm w-100" style="max-width: 600px;">
             <h1 class="banner mb-3">Caribbean Islands Gallery</h1>
-            <div id="slideShow" class="row justify-content-center">
+            <div id="slideShow" class="row justify-content-center g-3">
                 <!-- Photo Holder Section -->
-                <div class="col-12 col-md-8 photoHolder mb-3">
-                    <img class="thumbnail img-fluid" id="photo"
-                        src="https://via.placeholder.com/518x389?text=Welcome+to+my+Gallery" alt="Gallery Image" />
+                <div class="col-12">
+                    <div class="photoHolder">
+                        <img class="thumbnail img-fluid w-100" id="photo"
+                            src="https://via.placeholder.com/518x389?text=Welcome+to+my+Gallery" alt="Gallery Image" />
+                    </div>
                 </div>
 
                 <!-- More Indicator and Navigation Controls -->
-                <div class="col-12 text-center my-2">
-                    <img class="moreIndicator rot270 img-fluid" src="img/more.png" alt="More Content" />
+                <div class="col-12 text-center">
+                    <img class="moreIndicator rot270 img-fluid" src="img/more.png" alt="More Content" style="max-width: 50px;" />
                 </div>
-                <div id="nav" class="col-12 d-flex justify-content-between">
-                    <img id="prevPhoto" class="rot180 img-fluid" src="img/arrow.png" alt="Previous Photo" />
-                    <img id="nextPhoto" class="img-fluid" src="img/arrow.png" alt="Next Photo" />
+                <div id="nav" class="col-12 d-flex justify-content-between align-items-center px-3">
+                    <img id="prevPhoto" class="rot180 img-fluid" src="img/arrow.png" alt="Previous Photo" style="max-width: 60px;" />
+                    <img id="nextPhoto" class="img-fluid" src="img/arrow.png" alt="Next Photo" style="max-width: 60px;" />
                 </div>
 
                 <!-- Photo Details Section -->
-                <div class="col-12 details mt-3 p-2">
-                    <p class="location">Location:</p>
-                    <p class="description">Description:</p>
-                    <p class="date">Date:</p>
+                <div class="col-12 details mt-3 p-3">
+                    <p class="location mb-2">Location:</p>
+                    <p class="description mb-2">Description:</p>
+                    <p class="date mb-0">Date:</p>
                 </div>
             </div>
         </div>
