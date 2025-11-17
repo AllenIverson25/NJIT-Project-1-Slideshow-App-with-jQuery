@@ -11,10 +11,10 @@ $(document).ready(() => {
   startTimer()
 
   // Select the moreIndicator button and add a click event to:
-  // - toggle the rotation classes (rot90 and rot270)
+  // - toggle the rotation classes (rot270 and rot90)
   // - slideToggle the visibility of the .details section
-  $('.moreIndicator').click(function() {
-    $(this).toggleClass('rot90 rot270')
+  $('.moreIndicator').click(function () {
+    $(this).toggleClass('rot270 rot90')
     $('.details').slideToggle()
   })
 
@@ -29,27 +29,27 @@ $(document).ready(() => {
 })
 
 // Function to fetch JSON data and store it in mImages
-function fetchJSON () {
+function fetchJSON() {
   $.ajax({
     url: mUrl,
     type: 'GET',
     dataType: 'json',
-    success: function(data) {
+    success: function (data) {
       // Parse the JSON and push each image object into mImages array
-      data.images.forEach(function(image) {
+      data.images.forEach(function (image) {
         mImages.push(image)
       })
       // After JSON is loaded, call swapPhoto() to display the first image
       swapPhoto()
     },
-    error: function(xhr, status, error) {
+    error: function (xhr, status, error) {
       console.error('Error loading JSON:', error)
     }
   })
 }
 
 // Function to swap and display the next photo in the slideshow
-function swapPhoto () {
+function swapPhoto() {
   $('#photo').attr('src', mImages[mCurrentIndex].imgPath)
   $('.location').text('Location: ' + mImages[mCurrentIndex].imgLocation)
   $('.description').text('Description: ' + mImages[mCurrentIndex].description)
@@ -57,7 +57,7 @@ function swapPhoto () {
 }
 
 // Advances to the next photo, loops to the first photo if the end of array is reached
-function showNextPhoto () {
+function showNextPhoto() {
   mCurrentIndex++
   if (mCurrentIndex >= mImages.length) {
     mCurrentIndex = 0
@@ -68,7 +68,7 @@ function showNextPhoto () {
 }
 
 // Goes to the previous photo, loops to the last photo if mCurrentIndex goes negative
-function showPrevPhoto () {
+function showPrevPhoto() {
   mCurrentIndex--
   if (mCurrentIndex < 0) {
     mCurrentIndex = mImages.length - 1
@@ -79,18 +79,18 @@ function showPrevPhoto () {
 }
 
 // Timer function to automatically advance slideshow
-function startTimer () {
+function startTimer() {
   // Clear any existing timer to ensure only one runs at a time
   if (mTimer !== null) {
     clearInterval(mTimer)
   }
   // Create a timer to automatically call showNextPhoto() every mWaitTime milliseconds
-  mTimer = setInterval(function() {
+  mTimer = setInterval(function () {
     showNextPhoto()
   }, mWaitTime)
 }
 
 // Helper function to reset the timer
-function resetTimer () {
+function resetTimer() {
   startTimer()
 }

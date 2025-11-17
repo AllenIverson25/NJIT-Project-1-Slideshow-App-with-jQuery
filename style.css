@@ -1,123 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Roboto+Mono:wght@500&family=Righteous&display=swap");
+
 body {
-    overflow-x: hidden;
-    font-family: 'Century Gothic', sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background: linear-gradient(135deg, 
-        #0066cc 0%,
-        #0088dd 15%,
-        #00aaee 30%,
-        #33ccff 45%,
-        #66ddff 60%,
-        #99eeff 75%,
-        #ccf7ff 90%,
-        #e6f9ff 100%);
-    position: relative;
+  overflow-x: hidden;
+  font-family: "Century Gothic", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #0066cc 0%,
+    #0088dd 15%,
+    #00aaee 30%,
+    #33ccff 45%,
+    #66ddff 60%,
+    #99eeff 75%,
+    #ccf7ff 90%,
+    #e6f9ff 100%
+  );
+  background-size: 400% 400%;
+  animation: dynamicGradient 10s ease infinite;
+  position: relative;
+}
+
+@keyframes dynamicGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 #photoBooth {
-    position: relative;
-    z-index: 1;
-    padding: 30px;
-    max-width: 600px;
-    width: 90%;
-    margin: 50px auto;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-radius: 25px;
-    box-shadow: 
-        0 8px 32px 0 rgba(0, 119, 190, 0.37),
-        inset 0 0 20px rgba(255, 255, 255, 0.3),
-        0 0 60px rgba(77, 208, 225, 0.4);
-    border: 2px solid rgba(255, 255, 255, 0.4);
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 25px;
+  box-shadow: 0 8px 32px 0 rgba(0, 119, 190, 0.37),
+    inset 0 0 20px rgba(255, 255, 255, 0.3), 0 0 60px rgba(77, 208, 225, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 .photoHolder {
-    width: 100%;
-    text-align: center;
-    overflow: hidden;
-    border-radius: 12px;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .thumbnail {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 12px;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .banner {
-    font-size: 2.5rem;
-    font-weight: bold;
-    background: linear-gradient(90deg, 
-        #0077be 0%, 
-        #00a8cc 25%, 
-        #4dd0e1 50%, 
-        #80deea 75%, 
-        #0077be 100%);
-    background-size: 200% 200%;
-    animation: beachTextWave 4s ease infinite;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(2px 2px 4px rgba(0, 119, 190, 0.4));
-}
-
-@keyframes beachTextWave {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
+  font-family: "Righteous", cursive;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #0088dd;
+  text-shadow: black;
+  letter-spacing: 2px;
 }
 
 .moreIndicator {
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 #nav img {
-    height: 60px;
-    width: 60px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .details {
-    border: 2px solid rgba(0, 119, 190, 0.4);
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 12px;
-    color: #1a1a1a;
-    font-size: 1rem;
-    margin-top: 15px;
-    box-shadow: 0 4px 15px rgba(0, 119, 190, 0.2);
+  border: 2px solid rgba(0, 119, 190, 0.4);
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  color: #1a1a1a;
+  font-size: 1rem;
+  margin-top: 15px;
+  box-shadow: 0 4px 15px rgba(0, 119, 190, 0.2);
 }
 
 .details p {
-    margin: 10px 0;
-    font-weight: 600;
-    color: #1a1a1a;
+  margin: 10px 0;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Differentiated fonts for each detail section */
+.location {
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: #0077be;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.description {
+  font-family: "Pacifico", cursive;
+  font-size: 1.2rem;
+  color: #00695c;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.date {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+  color: #d84315;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .rot90 {
-    transform: rotate(90deg);
-    transition: transform 0.3s ease;
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
 }
 
 .rot180 {
-    transform: rotate(180deg);
-    transition: transform 0.3s ease;
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
 }
 
 .rot270 {
-    transform: rotate(270deg);
-    transition: transform 0.3s ease;
+  transform: rotate(270deg);
+  transition: transform 0.3s ease;
 }
